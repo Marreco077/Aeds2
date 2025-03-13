@@ -17,10 +17,15 @@ public class Tp01Q03 {
 
     public static StringBuilder CaesarCipher(String word) {
         StringBuilder caesar_word = new StringBuilder();
-        for(int i = 0; i < word.length(); i++) {
-            char newLetter = (char) (word.charAt(i) + 3);
 
-            caesar_word.append(newLetter);
+        for(int i = 0; i < word.length(); i++) {
+            if(word.charAt(i) <= 122) {
+                char newLetter = (char) (word.charAt(i) + 3);
+                caesar_word.append(newLetter);
+            }
+            else {
+                caesar_word.append((char) (word.charAt(i)));
+            }
         }
         return caesar_word;
     }

@@ -1,4 +1,5 @@
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 public class Tp01Q09 {
@@ -22,8 +23,9 @@ public class Tp01Q09 {
     }
 
     public static String isAnagram(String word1, String word2) {
+        String nao = new String(new byte[]{0x4E, (byte) 0xC3, (byte) 0x83,  0x4F}, StandardCharsets.UTF_8);
         if(word1.length() != word2.length()) {
-            return "NÃO";
+            return nao;
         }
 
         word1 = word1.toLowerCase();
@@ -46,7 +48,7 @@ public class Tp01Q09 {
             }
 
             if (count2 != count1) {
-                return "NÃO";
+                return nao;
             }
         }
         return "SIM";
